@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<title>Strings</title>
+<head>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>INPUT</legend>
+        Enter a string: <input type="text" id="x">
+        <br>
+        <input type="button" value="Submit" onclick="myfunc()">
+    </fieldset>
+</form>
+<p id="res"></p>
+<script>
+    function myfunc(){
+        x=document.getElementById("x").value;
+        flag="False";
+        if((x[0]=="+") && (x[x.length-1]=="=")){
+            for(i=1;i<x.length-1;i++){
+                if(x[i]>='A' && x[i]<='z'){
+                    if(x[i-1]=="+" && x[i+1]=="+"){
+                        flag="True";
+                    }
+                    else{
+                        flag="False";
+                        break;
+                    }
+                }
+            }
+        }
+        else{
+            flag="False";
+        }
+        document.getElementById("res").innerHTML=flag;
+    }
+</script>
+</body>
+</html>
