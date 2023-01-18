@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Baker street</title>
+</head>
+<body>
+    <h1>BAKER STREET</h1>
+    <hr>
+    <form>
+        <h2>Menu</h2>
+        <ol>
+            <li>Cake      Rs. 100</li> <input type="number" id="cakenum">
+            <br><br>
+            <li>Bread     Rs. 40</li> <input type="number" id="breadnum">
+            <br><br>
+            <li>Cookies   Rs. 80</li> <input type="number" id="cookienum">
+            <br><br>
+            <li>Croissant Rs. 120</li> <input type="number" id="cronum">
+            <br><br>
+        </ol>
+        <input type="button" value="Submit" onclick="myfunc()">
+    </form>
+    <script>
+        function myfunc(){
+            a1=parseInt(document.getElementById("cakenum").value)*100;
+            a2=parseInt(document.getElementById("breadnum").value)*40;
+            a3=parseInt(document.getElementById("cookienum").value)*80;
+            a4=parseInt(document.getElementById("cronum").value)*120;
+            price=a1+a2+a3+a4;
+            window.alert("Total price is Rs."+price);
+        }
+    </script>
+</body>
+</html>
