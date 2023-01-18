@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Strings</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>INPUT</legend>
+            Enter a string:
+            <input type="text" name="string" id="ip"><br>
+            <input type="button" onclick="myfunc()" value="Submit"> 
+        </fieldset>
+        <fieldset>
+            <legend>OUTPUT</legend>        
+            The modified string is: <br>
+            <p id="op1"></p><br>
+        </fieldset>
+    </form>
+    <script>
+        function myfunc(){
+            y=document.getElementById("ip").value;
+            x=y.split("");
+            for(i=0;i<x.length;i++){
+                if(y[i]==" "){
+                    x[i]=" ";
+                }
+                else if(y[i]=="z"){
+                    x[i]="A";
+                }
+                else{
+                    x[i]=String.fromCharCode(x[i].charCodeAt(0)+1);
+                }
+            }
+            	for(i=0;i<x.length;i++){
+                if(x[i]=="a"||x[i]=="e"||x[i]=="i"||x[i]=="o"||x[i]=="u"){
+                    x[i]=x[i].toUpperCase()
+                }
+            }
+            z=x.join("")
+            document.getElementById("op1").innerHTML=z;
+        }
+    </script>
+</body>
+</html>
