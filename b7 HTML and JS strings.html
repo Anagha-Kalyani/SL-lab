@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>STRINGS</title>
+    </head>
+    <body>
+        <p id="og"></p>
+        <form>
+            Enter string to be added to original string:<input type="text" id="x"><br>
+            <input type="button" value="Submit" onclick="myfunc()">
+        </form>
+        <p id="o1"></p>
+        <p id="o2"></p>
+        <p id="o3"></p>
+    </body>
+    <script>
+        OriginalString="This is a string"
+        document.getElementById("og").innerHTML="The original string is: "+OriginalString;
+        function myfunc(){
+            x=document.getElementById("x").value;
+            OriginalList=OriginalString.split(" ");
+            OriginalList.unshift(x);
+            OriginalString=OriginalList.join(" ");
+             document.getElementById("o1").innerHTML="The new string is: "+OriginalString;
+             myfunc2();
+        }
+        function myfunc2(){
+            OriginalList=OriginalString.split(" ");
+            MyList=[];
+            for(i=0;i<OriginalList.length;i++){
+                MyList[i]=OriginalList[i].length;
+            }
+            document.getElementById("o2").innerHTML="The length list is: "+MyList;
+            myfunc3(OriginalString,MyList);
+        }
+        function myfunc3(OriginalString,MyList){
+            newList=[];
+            for(i=0;i<OriginalList.length;i++){
+                if(MyList[i]>=3){
+                    newList.push(OriginalList[i]);
+                }
+            }
+            document.getElementById("o3").innerHTML="The filtered list is: "+newList;
+        }
+    </script>
+</html>
